@@ -1,0 +1,56 @@
+/* CreatePostForm.css */
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 50px;
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #008E97; /* Dolphins Aqua */
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-bottom: 10px;
+    color: #008E97; /* Dolphins Aqua for labels */
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%; /* Make inputs take the full width of the form */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #008E97; /* Dolphins Aqua for border */
+    border-radius: 4px;
+    color: #008E97; /* Dolphins Aqua for input text */
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: #FC4C02; /* Dolphins Orange for focus */
+    outline: none;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    background-color: #008E97; /* Dolphins Aqua */
+    color: #fff; /* White text on buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #FC4C02; /* Dolphins Orange */
+}

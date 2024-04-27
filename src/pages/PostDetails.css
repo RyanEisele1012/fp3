@@ -1,0 +1,65 @@
+/* Style for the card container */
+.card {
+    background-color: rgba(242, 33, 33, 0.3); /* Add background color with transparency */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    padding: 20px; /* Add padding to create space between content and edges */
+    margin: 20px; /* Add margin to separate the card from other elements */
+}
+
+/* Style for the post details container */
+.post-details {
+    background-color: #00000066; /* Set background color */
+    border-radius: 8px; /* Add rounded corners */
+    padding: 20px; /* Add padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    margin-bottom: 20px; /* Add margin to separate from other elements */
+}
+
+/* Style for the post title */
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style for the post content */
+.post-content {
+    margin-bottom: 20px;
+}
+
+/* Style for the post image */
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Style for the comments section */
+.comments-section {
+    margin-top: 30px;
+}
+
+/* Style for each individual comment */
+.comment {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for the comment user */
+.comment-user {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style for the comment text */
+.comment-text {
+    margin-bottom: 5px;
+}
+
+/* Style for the comment timestamp */
+.comment-timestamp {
+    font-style: italic;
+    color: #666;
+}
