@@ -21,7 +21,7 @@ ul {
 }
 
 .post {
-    border: 1px solid #ccc; /* Add border around each post */
+    border: 1px solid #000000; /* Add border around each post */
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px; /* Add space between posts */
