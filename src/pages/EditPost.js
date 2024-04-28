@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import supabase from '../client';
-import bcrypt from 'bcryptjs'; // Ensure bcryptjs is imported to use for password verification
+import bcrypt from 'bcryptjs'; // Ensure bcryptjs is correctly imported
 
 const EditPost = ({ postId }) => {
     const [post, setPost] = useState(null);
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [password, setPassword] = useState(''); // State to handle the password input
+    const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -25,6 +25,8 @@ const EditPost = ({ postId }) => {
                     .eq('id', postId)
                     .single();
                 if (error) throw error;
+                if (!data) throw new Error('Post not found');
+
                 setPost(data);
                 setTitle(data.title);
                 setContent(data.content);
@@ -40,9 +42,8 @@ const EditPost = ({ postId }) => {
     }, [postId]);
 
     const handleEditPost = async () => {
-        // First, verify the password
-        if (!post || !bcrypt.compareSync(password, post.password_hash)) {
-            setError("Incorrect password");
+        if (!post || typeof post.password_hash !== 'string' || !bcrypt.compareSync(password, post.password_hash)) {
+            setError("Incorrect password or missing post details");
             return;
         }
 
@@ -52,21 +53,16 @@ const EditPost = ({ postId }) => {
                 .update({ title, content })
                 .eq('id', postId);
             if (error) throw error;
+            alert('Post updated successfully');
             console.log('Post updated successfully:', data);
-            // Optionally, you can navigate to another page or show a success message here
         } catch (error) {
             console.error('Error editing post:', error.message);
             setError('Failed to update post');
         }
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
 
     return (
         <div>
