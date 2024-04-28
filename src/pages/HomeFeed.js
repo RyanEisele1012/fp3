@@ -27,7 +27,7 @@ const HomeFeed = ({ onPostSelected }) => {
 
     const handleUpvote = async (postId, post) => {
         try {
-            const { data, error } = await supabase
+            const {  error } = await supabase
                 .from('Posts')
                 .update({ upvotes: post.upvotes + 1 })
                 .eq('id', postId);

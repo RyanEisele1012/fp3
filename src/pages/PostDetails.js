@@ -12,7 +12,7 @@ const PostDetails = ({ post, onEdit, username }) => {
     const [error, setError] = useState(null);
     const [upvotes, setUpvotes] = useState(post.upvotes || 0);
     const [repostedPost, setRepostedPost] = useState(null);
-    const [currentUserID, setCurrentUserID] = useState(null);
+
 
     useEffect(() => {
         if (!post || !post.id) {
